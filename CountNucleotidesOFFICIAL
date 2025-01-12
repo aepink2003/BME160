@@ -1,0 +1,59 @@
+#!/usr/bin/env python3
+# Name: Ash Ediga
+# Group Members: Erika Stewart, Aurora
+
+#define class of the dna string
+class dnaString (str):
+    
+    #calcs length 
+    def length (self):
+        return (len(self))
+    
+    #calc percentage of ATGC in the DNA sequence// its not used in the code?
+    def getATGC (self):
+        num_A = self.count("A")
+        num_T = self.count("T")
+        num_G = self.count("G")
+        num_C = self.count("C")
+        return ((num_A + num_T + num_G + num_T)/ self.len() )
+    
+    #count number of bases
+    def countNucleotideA (self):
+        num_A = self.count('A')
+        return num_A
+    def countNucleotideT (self):
+        num_T = self.count('T')
+        return num_T
+    def countNucleotideG (self):
+        num_G = self.count('G')
+        return num_G
+    def countNucleotideC (self):
+        num_C = self.count('C')
+        return num_C
+    
+    
+#dna sequence input
+dna = input("Enter a dna sequence: ")
+
+# Convert the DNA sequence to all uppercase
+upperDNA = dna.upper()
+
+# Create an instance of dnaString class with the inputted DNA sequence
+coolString = dnaString(upperDNA)
+
+# this is what we were given but it doesnt match the output above
+
+# print ("number As = {} number C = {} number Gs = {} number Ts = {}".format(
+#     coolString.countNucleotideA(),
+#     coolString.countNucleotideC(),
+#     coolString.countNucleotideG(),
+#     coolString.countNucleotideT()
+# ) )
+
+# so i did...
+
+print(" Your sequence is {} nucleotides long with the following breakdown of bases: \n".format(len(dna)))
+print(" number of As = {}".format(coolString.countNucleotideA()))
+print(" number of Cs = {}".format(coolString.countNucleotideC()))
+print(" number of Gs = {}".format(coolString.countNucleotideG()))
+print(" number of Ts = {}".format(coolString.countNucleotideT()))
